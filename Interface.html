@@ -1,4 +1,4 @@
-<!--Simple To-Do List-->
+<!--Simple Notes-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid" onload="displayNotes()">
     <h1>Notes App</h1>
     <button onclick="Create()">Make a Note</button>
     <div id="Saved Notes">
         <h2>Saved Notes Here</h2>
+        <div id="notes"></div>
     </div>
     <div id="Note">
         <h2>Note Here</h2>
@@ -19,8 +20,7 @@
                 <label>Title</label>
                 <input type="text" id="title"> 
                 <label>Note</label>
-                <textarea name="note" rows="10" cols="30" id="message">Write your note here.
-                </textarea>
+                <textarea name="note" rows="10" cols="30" id="message">Write your note here.</textarea>
             </form>
             <button onclick="Save()">Save</button>
         </div>
