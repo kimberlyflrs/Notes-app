@@ -2,6 +2,26 @@
     visibility: hidden;
 }
 
-#Read{
+/*#Read{
     visibility: hidden;
+}*/
+
+.card-subtitle{
+    color: #686868;
+}
+
+.card{
+    margin-bottom: 1em;
+}
+
+.title{
+    text-align: center;
+}
+
+#MakeNote{
+    float: right;
+}
+
+#NewNote, #Read{
+    margin-top: 20px;
 }

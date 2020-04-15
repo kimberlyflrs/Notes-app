@@ -8,12 +8,12 @@
 </head>
 
 <body class="container-fluid" onload="displayNotes()">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <h1 class="title">Notes App</h1>
+    </div>
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
-            <h1>Notes App</h1>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
-            <button type="button" class="btn btn-primary" onclick="Create()">Make a Note</button>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+            <button type="button" class="btn btn-primary" onclick="Create()" id="MakeNote">Make a Note</button>
         </div>
     </div>
 
@@ -21,14 +21,22 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div id="Saved Notes">
-                <h2>Saved Notes Here</h2>
+                <h2>All Notes</h2>
                 <div id="notes"></div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div id="Note">
-                <h2>Note Here</h2>
-                <div id="Read"></div>
+                <div id="Read">
+                    <div class="card-body" id="card-content">
+                        <h5 class="card-title">Housekeeping</h5>
+                        <h6 class="card-subtitle" id="note_created">Sun Apr 12 2020 22:21:43 GMT-0700 (Pacific Daylight Time)</h6>
+                        <p class="card-body" id="note_message">clean the living room, organize bookshelf</p>
+                        <edit class="btn btn-success" id="edit">Edit</edit>
+                        <button class="btn btn-danger" id="delete">Delete</button>
+                    </div>
+
+                </div>
                 <div id="Create">
                 <form id="NewNote">
                     <div class="row"><label>Title</label></div>

@@ -1,5 +1,7 @@
 //Things to do:  add time, clean up code, add more styling
 
+var myStorage = window.localStorage;
+
 var notes = [{"title":"Housekeeping", "date":new Date, "message": "clean the living room, organize bookshelf"}];
 
 function Create(){
@@ -12,6 +14,7 @@ function Create(){
 function Save(){
     //make sure all fields are filled
     //saves the notes created to a list
+    console.log(myStorage);
     console.log('saving');
     var notFilled = checkForm();
 
@@ -20,6 +23,9 @@ function Save(){
         var message = document.getElementById("message").value;
         var date = new Date;
         notes.unshift({"title":title, "date":date,"message": message});
+        myStorage.setItem('1', notes);
+        console.log(myStorage);
+
     
         //update saved notes section
         displayNotes();
@@ -33,7 +39,7 @@ function Save(){
 function displayNotes(){
     //displayes the saved notes
     //clear the section remove all children elements of id notes
-    document.getElementById("Read").style.visibility="hidden";
+    //document.getElementById("Read").style.visibility="hidden";
     var n = document.getElementById("notes");
 
     while (n.hasChildNodes()){
@@ -59,6 +65,7 @@ function displayNotes(){
         var time = document.createElement("h6");
         time.className="card-subtitle";
         var date = document.createTextNode(element.date.toDateString());
+        console.log(element.date.toLocaleTimeString('en-US'));
         time.appendChild(date);
 
         divs.appendChild(title);
@@ -129,7 +136,7 @@ function readNote(element){
         deleteBtn.onclick = function(){deleteNote(idd)};
 
 
-        var editBtn = document.createElement("edit");
+        var editBtn = document.createElement("button");
         editBtn.className = "btn btn-success";
         var edit = document.createTextNode("Edit");
         editBtn.id = 'edit';
